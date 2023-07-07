@@ -121,17 +121,18 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IBook.cs" />
+    <Compile Include="Models\Book\IBook.cs" />
     <Compile Include="Models\IItem.cs" />
-    <Compile Include="Models\IMovie.cs" />
+    <Compile Include="Models\Movie\IMovie.cs" />
     <Compile Include="Models\IRentable.cs" />
-    <Compile Include="Models\IRentableMovie.cs" />
+    <Compile Include="Models\Movie\IRentableMovie.cs" />
     <Compile Include="Models\ISellable.cs" />
-    <Compile Include="Models\ISellableMovie.cs" />
-    <Compile Include="Models\BlueRayMovie.cs" />
+    <Compile Include="Models\Movie\ISellableMovie.cs" />
+    <Compile Include="Models\Movie\BlueRayMovie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +140,7 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
     <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-luman.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap-reboot.rtl.css" />
@@ -182,12 +184,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Movie\Random.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\Customer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

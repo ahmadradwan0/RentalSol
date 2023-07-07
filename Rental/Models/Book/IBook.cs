@@ -17,7 +17,7 @@ namespace Rental.Models
         */
 
         // Its own ...
-        int pages { get; set; }
+        int Pages { get; set; }
 
         string Auther { get; set; }
 

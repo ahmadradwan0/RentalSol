@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rental.Models
+namespace Rental.Models.Movie
 {
     internal interface ISellableMovie : ISellable , IMovie
     {

@@ -9,25 +9,14 @@ namespace Rental.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+
+        //home/index
+        public ContentResult Index(int? id,string sortby)
         {
 
            
-            return View();
+            return Content(String.Format("Id={0}&sortby={1}",id,sortby));
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
     }
 }

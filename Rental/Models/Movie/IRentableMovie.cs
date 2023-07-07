@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rental.Models
+namespace Rental.Models.Movie
 {
-    internal interface IRentableMovie : IMovie , IRentable
+    public interface IRentableMovie : IMovie , IRentable
     {
 
 

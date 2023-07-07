@@ -1,4 +1,4 @@
-﻿namespace Rental.Models
+﻿namespace Rental.Models.Movie
 {
     public interface IMovie : IItem
     {
