@@ -24,7 +24,7 @@ namespace Rental
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-luman.css",
-                      "~/Content/site.css"));
+                      "~/Content/Site.css"));
         }
     }
 }

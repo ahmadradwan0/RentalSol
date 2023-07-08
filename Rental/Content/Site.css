@@ -18,3 +18,12 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+.popular {
+    color: red;
+}
+
+.not-popular {
+    color: blue;
+}
