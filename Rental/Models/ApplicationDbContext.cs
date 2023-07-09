@@ -16,7 +16,7 @@ namespace Rental.Models
 
         }
 
-        public DbSet<Customer.Customer> Customers { get; set; }
+        public DbSet<Customer.MovieRentalCustomer> Customers { get; set; }
         public DbSet<BlueRayMovie> Movies { get; set; }
 
 

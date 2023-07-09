@@ -11,7 +11,7 @@ namespace Rental.Models.ViewModels
     {
         public BlueRayMovie movie { set; get; }
 
-        public List<Customer.Customer> Customers { get; set; }
+        public List<Customer.MovieRentalCustomer> Customers { get; set; }
 
 
 

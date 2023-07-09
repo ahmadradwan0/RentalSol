@@ -144,8 +144,10 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Book\IBook.cs" />
-    <Compile Include="Models\Customer\Customer.cs" />
+    <Compile Include="Models\Customer\MovieRentalCustomer.cs" />
     <Compile Include="Models\Customer\ICustomer.cs" />
+    <Compile Include="Models\Customer\IMembershipType.cs" />
+    <Compile Include="Models\Customer\MovieRentalCustomerMembeshipType.cs" />
     <Compile Include="Models\IItem.cs" />
     <Compile Include="Models\Movie\IMovie.cs" />
     <Compile Include="Models\IRentable.cs" />

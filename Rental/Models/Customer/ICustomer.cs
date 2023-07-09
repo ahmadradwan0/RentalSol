@@ -11,5 +11,10 @@ namespace Rental.Models.Customer
         int Id { get; set; }
         string Name { get; set; }
 
+        string Email { get; set; }
+
+        bool IsSubscribedToNewsLetter { get; set; }
+
+        IMembershipType MembershipType { get; set; }
     }
 }

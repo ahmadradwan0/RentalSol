@@ -17,11 +17,13 @@ namespace Rental.Controllers
         {
 
             var moviez = new BlueRayMovie() { ID = 1, Title = "Zombieees" };
-            var customers = new List<Customer>()
+            var customers = new List<MovieRentalCustomer>()
             {
-                new Customer { Id = 1111, Name = "Ahmad" },
-                new Customer { Id = 1112, Name = "Sami" },
-                new Customer { Id = 1113, Name = "kal" }
+                new MovieRentalCustomer { Id = 1111, Name = "Ahmad" },
+                new MovieRentalCustomer { Id = 1112, Name = "Sami" },
+                new MovieRentalCustomer { Id = 1113, Name = "kal" ,Email = "ahmad@yahoo.com", IsSubscribedToNewsLetter = true,
+                    MembershipType = new MovieRentalCustomerMembeshipType(){DiscountRate = 5,DurationInMonths = 6,Id = 1,SignUpFee = 10}},
+                
             };
 
             // Now we Create a view model Object ... to Pass it ... 
