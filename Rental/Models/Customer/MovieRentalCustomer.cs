@@ -1,8 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Web;
+using Rental.Models.DataBase;
 
+[assembly: InternalsVisibleTo("ApplicationDbContext")]
 namespace Rental.Models.Customer
 {
     public class MovieRentalCustomer : ICustomer
@@ -16,10 +20,16 @@ namespace Rental.Models.Customer
 
         //IMembershipType ICustomer.MembershipType { get ; set; }
 
+        [NotMapped]
         public IMembershipType MembershipType { get; set; }
 
+        public MembershipTypeBasic MembershipTypez
+        {
+            get;
+            set;
+        }
         //Get the foriegn Key .. 
 
-        public byte MembershipTypeId { get; set; }
+        public byte MembershipTypezId { get; set; }
     }
 }

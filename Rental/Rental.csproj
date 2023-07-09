@@ -133,13 +133,41 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202307091134171_InitialModel.cs" />
-    <Compile Include="Migrations\202307091134171_InitialModel.designer.cs">
-      <DependentUpon>202307091134171_InitialModel.cs</DependentUpon>
+    <Compile Include="Migrations\202307091434372_textAfterHussle.cs" />
+    <Compile Include="Migrations\202307091434372_textAfterHussle.designer.cs">
+      <DependentUpon>202307091434372_textAfterHussle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202307091215477_addingEmailToCustomerProp.cs" />
-    <Compile Include="Migrations\202307091215477_addingEmailToCustomerProp.designer.cs">
-      <DependentUpon>202307091215477_addingEmailToCustomerProp.cs</DependentUpon>
+    <Compile Include="Migrations\202307091446313_privateMembershipAndAddingAssembly.cs" />
+    <Compile Include="Migrations\202307091446313_privateMembershipAndAddingAssembly.designer.cs">
+      <DependentUpon>202307091446313_privateMembershipAndAddingAssembly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.cs" />
+    <Compile Include="Migrations\202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.designer.cs">
+      <DependentUpon>202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307091944500_insertIntomembershiptypes.cs" />
+    <Compile Include="Migrations\202307091944500_insertIntomembershiptypes.designer.cs">
+      <DependentUpon>202307091944500_insertIntomembershiptypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307092006464_addingBasicplan.cs" />
+    <Compile Include="Migrations\202307092006464_addingBasicplan.designer.cs">
+      <DependentUpon>202307092006464_addingBasicplan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307092012350_redolast.cs" />
+    <Compile Include="Migrations\202307092012350_redolast.designer.cs">
+      <DependentUpon>202307092012350_redolast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307092019056_addconstaitnsonId.cs" />
+    <Compile Include="Migrations\202307092019056_addconstaitnsonId.designer.cs">
+      <DependentUpon>202307092019056_addconstaitnsonId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307092025030_insertintoMembership.cs" />
+    <Compile Include="Migrations\202307092025030_insertintoMembership.designer.cs">
+      <DependentUpon>202307092025030_insertintoMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307092028129_tryForLoop.cs" />
+    <Compile Include="Migrations\202307092028129_tryForLoop.designer.cs">
+      <DependentUpon>202307092028129_tryForLoop.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -148,6 +176,7 @@
     <Compile Include="Models\Customer\ICustomer.cs" />
     <Compile Include="Models\Customer\IMembershipType.cs" />
     <Compile Include="Models\Customer\MovieRentalCustomerMembeshipType.cs" />
+    <Compile Include="Models\DataBase\MembershipType.cs" />
     <Compile Include="Models\IItem.cs" />
     <Compile Include="Models\Movie\IMovie.cs" />
     <Compile Include="Models\IRentable.cs" />
@@ -243,11 +272,32 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202307091134171_InitialModel.resx">
-      <DependentUpon>202307091134171_InitialModel.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202307091434372_textAfterHussle.resx">
+      <DependentUpon>202307091434372_textAfterHussle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307091215477_addingEmailToCustomerProp.resx">
-      <DependentUpon>202307091215477_addingEmailToCustomerProp.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202307091446313_privateMembershipAndAddingAssembly.resx">
+      <DependentUpon>202307091446313_privateMembershipAndAddingAssembly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.resx">
+      <DependentUpon>202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307091944500_insertIntomembershiptypes.resx">
+      <DependentUpon>202307091944500_insertIntomembershiptypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307092006464_addingBasicplan.resx">
+      <DependentUpon>202307092006464_addingBasicplan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307092012350_redolast.resx">
+      <DependentUpon>202307092012350_redolast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307092019056_addconstaitnsonId.resx">
+      <DependentUpon>202307092019056_addconstaitnsonId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307092025030_insertintoMembership.resx">
+      <DependentUpon>202307092025030_insertintoMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307092028129_tryForLoop.resx">
+      <DependentUpon>202307092028129_tryForLoop.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

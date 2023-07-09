@@ -7,13 +7,13 @@ namespace Rental.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class addingEmailToCustomerProp : IMigrationMetadata
+    public sealed partial class privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addingEmailToCustomerProp));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest));
         
         string IMigrationMetadata.Id
         {
-            get { return "202307091215477_addingEmailToCustomerProp"; }
+            get { return "202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest"; }
         }
         
         string IMigrationMetadata.Source

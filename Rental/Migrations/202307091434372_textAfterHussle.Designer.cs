@@ -7,13 +7,13 @@ namespace Rental.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class InitialModel : IMigrationMetadata
+    public sealed partial class textAfterHussle : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialModel));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(textAfterHussle));
         
         string IMigrationMetadata.Id
         {
-            get { return "202307091134171_InitialModel"; }
+            get { return "202307091434372_textAfterHussle"; }
         }
         
         string IMigrationMetadata.Source
