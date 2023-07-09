@@ -26,6 +26,7 @@ namespace Rental.Controllers
 
             // Now we Create a view model Object ... to Pass it ... 
             var ViewModelObject = new RandomMovieViewModel { Customers = customers, movie = moviez };
+
             return View(ViewModelObject);
         }
     }
