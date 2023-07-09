@@ -77,3 +77,10 @@ C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.csproj.CoreCompile
 C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.csproj.CopyComplete
 C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.dll
 C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.pdb
+C:\Users\ahmad\source\repos\RentalSol\Rental\bin\EntityFramework.dll
+C:\Users\ahmad\source\repos\RentalSol\Rental\bin\EntityFramework.SqlServer.dll
+C:\Users\ahmad\source\repos\RentalSol\Rental\bin\EntityFramework.xml
+C:\Users\ahmad\source\repos\RentalSol\Rental\bin\EntityFramework.SqlServer.xml
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.InitialModel.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.csproj.GenerateResource.cache
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.addingEmailToCustomerProp.resources
