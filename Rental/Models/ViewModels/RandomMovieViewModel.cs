@@ -9,9 +9,9 @@ namespace Rental.Models.ViewModels
 {
     public class RandomMovieViewModel
     {
-        public BlueRayMovie movie { set; get; }
+        public RentableMovie movie { set; get; }
 
-        public List<Customer.MovieRentalCustomer> Customers { get; set; }
+        public List<Customer.Customer> Customers { get; set; }
 
 
 

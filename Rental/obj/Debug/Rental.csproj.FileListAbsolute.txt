@@ -81,13 +81,6 @@ C:\Users\ahmad\source\repos\RentalSol\Rental\bin\EntityFramework.dll
 C:\Users\ahmad\source\repos\RentalSol\Rental\bin\EntityFramework.SqlServer.dll
 C:\Users\ahmad\source\repos\RentalSol\Rental\bin\EntityFramework.xml
 C:\Users\ahmad\source\repos\RentalSol\Rental\bin\EntityFramework.SqlServer.xml
-C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.textAfterHussle.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.text.resources
 C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.csproj.GenerateResource.cache
-C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.privateMembershipAndAddingAssembly.resources
-C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.resources
-C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.insertIntomembershiptypes.resources
-C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.addingBasicplan.resources
-C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.redolast.resources
-C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.addconstaitnsonId.resources
-C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.insertintoMembership.resources
-C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.tryForLoop.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.test.resources

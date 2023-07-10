@@ -24,7 +24,7 @@ namespace Rental.Controllers
 
             for (int i = 0; i < movieSet.Length; i++)
             {
-                movieSet[i] = new BlueRayMovie()
+                movieSet[i] = new RentableMovie()
                 {
                     ID = i,
                     Title = "Movie Num : " + i.ToString()

@@ -11,11 +11,11 @@ namespace Rental.Controllers
     {
 
         //home/index
-        public ContentResult Index(int? id,string sortby)
+        public ViewResult Index()
         {
 
-           
-            return Content(String.Format("Id={0}&sortby={1}",id,sortby));
+
+            return View();
         }
 
     }

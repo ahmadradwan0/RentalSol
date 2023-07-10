@@ -127,55 +127,27 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MovieController.cs" />
-    <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202307091434372_textAfterHussle.cs" />
-    <Compile Include="Migrations\202307091434372_textAfterHussle.designer.cs">
-      <DependentUpon>202307091434372_textAfterHussle.cs</DependentUpon>
+    <Compile Include="Migrations\202307100204213_text.cs" />
+    <Compile Include="Migrations\202307100204213_text.designer.cs">
+      <DependentUpon>202307100204213_text.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202307091446313_privateMembershipAndAddingAssembly.cs" />
-    <Compile Include="Migrations\202307091446313_privateMembershipAndAddingAssembly.designer.cs">
-      <DependentUpon>202307091446313_privateMembershipAndAddingAssembly.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.cs" />
-    <Compile Include="Migrations\202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.designer.cs">
-      <DependentUpon>202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202307091944500_insertIntomembershiptypes.cs" />
-    <Compile Include="Migrations\202307091944500_insertIntomembershiptypes.designer.cs">
-      <DependentUpon>202307091944500_insertIntomembershiptypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202307092006464_addingBasicplan.cs" />
-    <Compile Include="Migrations\202307092006464_addingBasicplan.designer.cs">
-      <DependentUpon>202307092006464_addingBasicplan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202307092012350_redolast.cs" />
-    <Compile Include="Migrations\202307092012350_redolast.designer.cs">
-      <DependentUpon>202307092012350_redolast.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202307092019056_addconstaitnsonId.cs" />
-    <Compile Include="Migrations\202307092019056_addconstaitnsonId.designer.cs">
-      <DependentUpon>202307092019056_addconstaitnsonId.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202307092025030_insertintoMembership.cs" />
-    <Compile Include="Migrations\202307092025030_insertintoMembership.designer.cs">
-      <DependentUpon>202307092025030_insertintoMembership.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202307092028129_tryForLoop.cs" />
-    <Compile Include="Migrations\202307092028129_tryForLoop.designer.cs">
-      <DependentUpon>202307092028129_tryForLoop.cs</DependentUpon>
+    <Compile Include="Migrations\202307100223213_test.cs" />
+    <Compile Include="Migrations\202307100223213_test.designer.cs">
+      <DependentUpon>202307100223213_test.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Book\IBook.cs" />
-    <Compile Include="Models\Customer\MovieRentalCustomer.cs" />
+    <Compile Include="Models\Customer\Customer.cs" />
     <Compile Include="Models\Customer\ICustomer.cs" />
     <Compile Include="Models\Customer\IMembershipType.cs" />
-    <Compile Include="Models\Customer\MovieRentalCustomerMembeshipType.cs" />
     <Compile Include="Models\DataBase\MembershipType.cs" />
     <Compile Include="Models\IItem.cs" />
     <Compile Include="Models\Movie\IMovie.cs" />
@@ -183,7 +155,9 @@
     <Compile Include="Models\Movie\IRentableMovie.cs" />
     <Compile Include="Models\ISellable.cs" />
     <Compile Include="Models\Movie\ISellableMovie.cs" />
-    <Compile Include="Models\Movie\BlueRayMovie.cs" />
+    <Compile Include="Models\Movie\RentableMovie.cs" />
+    <Compile Include="Models\Movie\SellableMovie.cs" />
+    <Compile Include="Models\ViewModels\CustomerViewModel.cs" />
     <Compile Include="Models\ViewModels\RandomMovieViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -236,10 +210,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Movie\Movies.cshtml" />
-    <Content Include="Views\Test\Random.cshtml" />
-    <Content Include="Views\Shared\_navbar.cshtml" />
+    <Content Include="Views\Shared\NavbarComponents\_navbar.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Enums\" />
@@ -272,32 +248,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202307091434372_textAfterHussle.resx">
-      <DependentUpon>202307091434372_textAfterHussle.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202307100204213_text.resx">
+      <DependentUpon>202307100204213_text.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307091446313_privateMembershipAndAddingAssembly.resx">
-      <DependentUpon>202307091446313_privateMembershipAndAddingAssembly.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.resx">
-      <DependentUpon>202307091454195_privateMembershipAndAddingAssemblyNotWorkingBackTopublicTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307091944500_insertIntomembershiptypes.resx">
-      <DependentUpon>202307091944500_insertIntomembershiptypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307092006464_addingBasicplan.resx">
-      <DependentUpon>202307092006464_addingBasicplan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307092012350_redolast.resx">
-      <DependentUpon>202307092012350_redolast.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307092019056_addconstaitnsonId.resx">
-      <DependentUpon>202307092019056_addconstaitnsonId.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307092025030_insertintoMembership.resx">
-      <DependentUpon>202307092025030_insertintoMembership.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307092028129_tryForLoop.resx">
-      <DependentUpon>202307092028129_tryForLoop.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202307100223213_test.resx">
+      <DependentUpon>202307100223213_test.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
