@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using Rental.Models.Customer;
-using Rental.Models.DataBase;
+
 using Rental.Models.Movie;
 
 
@@ -23,8 +23,12 @@ namespace Rental.Models
         //public DbSet<RentableMovie> Movies { get; set; }
 
         
-        public DbSet<MembershipType> MembershipType { get; set; }  
+        public DbSet<DataBase.MembershipType> MembershipTypes { get; set; }  
 
+        public DbSet<Movie.Movie> Movies { get; set; }
+
+
+        
 
     }
 }

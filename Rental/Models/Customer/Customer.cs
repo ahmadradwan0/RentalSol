@@ -18,7 +18,7 @@ namespace Rental.Models.Customer
 
         public bool IsSubscribedToNewsLetter { get; set; }
 
-        //IMembershipType ICustomer.MembershipType { get ; set; }
+        //IMembershipType ICustomer.MembershipTypes { get ; set; }
 
         [NotMapped]
         public IMembershipType MembershipType { get; set; }

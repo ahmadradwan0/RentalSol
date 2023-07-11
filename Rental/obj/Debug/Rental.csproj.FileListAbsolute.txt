@@ -84,3 +84,9 @@ C:\Users\ahmad\source\repos\RentalSol\Rental\bin\EntityFramework.SqlServer.xml
 C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.text.resources
 C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.csproj.GenerateResource.cache
 C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.test.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.addMovieTable.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.testMembership.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.basic.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.basic2.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.test3.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.test4.resources

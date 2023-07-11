@@ -142,6 +142,30 @@
     <Compile Include="Migrations\202307100223213_test.designer.cs">
       <DependentUpon>202307100223213_test.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307110036242_addMovieTable.cs" />
+    <Compile Include="Migrations\202307110036242_addMovieTable.designer.cs">
+      <DependentUpon>202307110036242_addMovieTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307110045485_testMembership.cs" />
+    <Compile Include="Migrations\202307110045485_testMembership.designer.cs">
+      <DependentUpon>202307110045485_testMembership.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307110056262_basic.cs" />
+    <Compile Include="Migrations\202307110056262_basic.designer.cs">
+      <DependentUpon>202307110056262_basic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307110058567_basic2.cs" />
+    <Compile Include="Migrations\202307110058567_basic2.designer.cs">
+      <DependentUpon>202307110058567_basic2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307110100398_test3.cs" />
+    <Compile Include="Migrations\202307110100398_test3.designer.cs">
+      <DependentUpon>202307110100398_test3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307110105044_test4.cs" />
+    <Compile Include="Migrations\202307110105044_test4.designer.cs">
+      <DependentUpon>202307110105044_test4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Book\IBook.cs" />
@@ -214,7 +238,7 @@
     <Content Include="Views\Shared\NavbarComponents\_navbar.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
-    <Content Include="Views\Customers\Index.cshtml" />
+    <Content Include="Views\Customers\AllCustomers.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +277,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307100223213_test.resx">
       <DependentUpon>202307100223213_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307110036242_addMovieTable.resx">
+      <DependentUpon>202307110036242_addMovieTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307110045485_testMembership.resx">
+      <DependentUpon>202307110045485_testMembership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307110056262_basic.resx">
+      <DependentUpon>202307110056262_basic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307110058567_basic2.resx">
+      <DependentUpon>202307110058567_basic2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307110100398_test3.resx">
+      <DependentUpon>202307110100398_test3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307110105044_test4.resx">
+      <DependentUpon>202307110105044_test4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

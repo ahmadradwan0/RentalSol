@@ -7,6 +7,7 @@ using System.Web.Security;
 using Rental.Models;
 using Rental.Models.Customer;
 using Rental.Models.DataBase;
+using Rental.Models.Movie;
 using Rental.Models.ViewModels;
 
 namespace Rental.Controllers
@@ -31,14 +32,17 @@ namespace Rental.Controllers
             base.Dispose(disposing);
         }
 
-        // GET: Customers
+        // GET: Customers  
 
-        public ActionResult Index()
+        public ActionResult AllCustomers()
         {
             ///  /// /// ... 
             List<Customer> customers = _DbContext.Customers.ToList();
-            List<MembershipType> types = _DbContext.MembershipType.ToList();
-            
+            List<MembershipType> types = _DbContext.MembershipTypes.ToList();
+            List<Movie> movies = _DbContext.Movies.ToList();
+
+           
+          
             CustomerViewModel = new CustomerViewModel();
             CustomerViewModel.Customers = customers;
             CustomerViewModel.MembershipType = types;

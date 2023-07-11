@@ -1,0 +1,33 @@
+﻿@using Rental.Models.DataBase
+@model Rental.Models.ViewModels.CustomerViewModel
+
+@{
+    ViewBag.Title = "title";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List of all customers</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Is Subscribed to Newsletter</th>
+        <th scope="col">Membership Type</th>
+    </tr>
+    </thead>
+    
+    @foreach (var customer in Model.Customers)
+    {
+        <tr>
+            <td>@customer.Id</td>
+            <td>@customer.Name</td>
+            <td>@customer.Email</td>
+            <td>@(customer.IsSubscribedToNewsLetter ? "Yes" : "No")</td>
+            <td>@Model.MembershipType.SingleOrDefault(m => m.Id == customer.MembershipTypezId).SubscribtionName</td>
+        </tr>
+    }
+    
+</table>
