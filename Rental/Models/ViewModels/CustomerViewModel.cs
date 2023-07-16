@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
-using Rental.Models.Customer;
-using Rental.Models.DataBase;
+using System.Xml.Linq;
 
 namespace Rental.Models.ViewModels
 {
-    public class CustomerViewModel 
+    public class CustomerViewModel
     {
-        public List<Customer.Customer> Customers { get; set; }
+        public int Id { get; set; }
 
+        [Required]
+        [StringLength(50)]
+        public string Name { get; set; }
 
-        public List<MembershipType> MembershipType { get; set; }
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; }
 
-
-
+        [Display(Name = "Subscribed to Newsletter")]
+        public bool IsSubscribedToNewsletter { get; set; }
     }
 }

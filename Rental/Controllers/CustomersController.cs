@@ -4,23 +4,33 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Rental.Data.Repositories;
+using Rental.DataAccess.Repositories.MembershipTypes;
 using Rental.Models;
 using Rental.Models.Customer;
 using Rental.Models.DataBase;
 using Rental.Models.Movie;
 using Rental.Models.ViewModels;
+using Rental.Validations.CustomersValidations;
 
 namespace Rental.Controllers
 {
     public class CustomersController : Controller
     {
         private ApplicationDbContext _DbContext;
-        private CustomerViewModel CustomerViewModel;
+        private ICustomerRepository _CustomerRepository;
+        private IMembershipTypesRepository _MembershipTypesRepository;
+        private ICustomerValidationService _customerValidationService;
+        private CustomerMembershipTypeViewModel _CustomerViewModel;
+
 
         public CustomersController()
         {
             _DbContext = new ApplicationDbContext();
-            
+            _CustomerRepository = new CustomerRepository(_DbContext);
+            _MembershipTypesRepository = new MembershipTypesRepository(_DbContext);
+            _CustomerViewModel = new CustomerMembershipTypeViewModel();
+            _customerValidationService = new CustomerValidationService(_DbContext);
         }
 
         protected override void Dispose(bool disposing)
@@ -37,23 +47,55 @@ namespace Rental.Controllers
         public ActionResult AllCustomers()
         {
             ///  /// /// ... 
-            List<Customer> customers = _DbContext.Customers.ToList();
-            List<MembershipType> types = _DbContext.MembershipTypes.ToList();
-            List<Movie> movies = _DbContext.Movies.ToList();
+            List<Customer> customers = _CustomerRepository.GetAllCustomers();
 
-           
-          
-            CustomerViewModel = new CustomerViewModel();
-            CustomerViewModel.Customers = customers;
-            CustomerViewModel.MembershipType = types;
+            List<MembershipType> types = _MembershipTypesRepository.GetAllMembershipTypes();
 
 
-            return View(CustomerViewModel);
+
+
+            // Feeding The ViewModel 
+            _CustomerViewModel.Customers = customers.Select(c => new CustomerViewModel
+            {
+                Id = c.Id,
+                Name = c.Name,
+                Email = c.Email,
+                IsSubscribedToNewsletter = c.IsSubscribedToNewsLetter
+            }).ToList();    
+
+            _CustomerViewModel.MembershipTypes = types.Select(t => new MembershipTypeViewModel
+            {
+                Id = t.Id,
+                SubscribtionName = t.SubscribtionName,
+                Price = t.Price
+            }).ToList();
+
+
+            return View(_CustomerViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Save(Customer customer)
+        {
+            if (customer.Id == 0)
+            {
+                _DbContext.Customers.Add(customer);
+            }
+            else
+            {
+                var customerInDataBase = _DbContext.Customers.Single(c => c.Id == customer.Id);
+
+                TryUpdateModel(customerInDataBase);
+            }
+
+
+
+            return View(_CustomerViewModel);
         }
 
         public ActionResult Details(int id)
         {
-            var customer = _DbContext.Customers.FirstOrDefault(x => x.Id == id);
+            var customer = _CustomerRepository.GetCustomerById(id);
             if (customer == null)
             {
                 return HttpNotFound();
@@ -62,4 +104,7 @@ namespace Rental.Controllers
         }
        
     }
+
+
+  
 }

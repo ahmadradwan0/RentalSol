@@ -1,5 +1,5 @@
 ﻿@using Rental.Models.DataBase
-@model Rental.Models.ViewModels.CustomerViewModel
+@model Rental.Models.ViewModels.CustomerMembershipTypeViewModel
 
 @{
     ViewBag.Title = "title";
@@ -22,11 +22,17 @@
     @foreach (var customer in Model.Customers)
     {
         <tr>
+
             <td>@customer.Id</td>
             <td>@customer.Name</td>
             <td>@customer.Email</td>
-            <td>@(customer.IsSubscribedToNewsLetter ? "Yes" : "No")</td>
-            <td>@Model.MembershipType.SingleOrDefault(m => m.Id == customer.MembershipTypezId).SubscribtionName</td>
+            <td>@(customer.IsSubscribedToNewsletter ? "Yes" : "No")</td>
+            <td>@Model.MembershipTypes.SingleOrDefault(M => M.Id == customer.Id)</td>
+            @*
+        <td>@Model.MembershipType.SingleOrDefault(m => m.Id == customer.MembershipTypezId).SubscribtionName</td>
+            *@
+            
+
         </tr>
     }
     
