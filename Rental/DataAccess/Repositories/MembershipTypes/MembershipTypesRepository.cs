@@ -25,7 +25,7 @@ namespace Rental.DataAccess.Repositories.MembershipTypes
 
         public string GetMemberShipNameToSpecificCustomerById(Customer customer)
         {
-            return _dbContext.MembershipTypes.SingleOrDefault(M => M.Id == customer.Id).SubscribtionName;
+            return _dbContext.MembershipTypes.SingleOrDefault(M => M.Id == customer.MembershipTypeId).SubscribtionName.ToString();
         }
     }
 }

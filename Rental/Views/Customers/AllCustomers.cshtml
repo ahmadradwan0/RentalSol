@@ -27,7 +27,7 @@
             <td>@customer.Name</td>
             <td>@customer.Email</td>
             <td>@(customer.IsSubscribedToNewsletter ? "Yes" : "No")</td>
-            <td>@Model.MembershipTypes.SingleOrDefault(M => M.Id == customer.Id)</td>
+            <td>@customer.MembershipName</td>
             @*
         <td>@Model.MembershipType.SingleOrDefault(m => m.Id == customer.MembershipTypezId).SubscribtionName</td>
             *@

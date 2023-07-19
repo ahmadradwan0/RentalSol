@@ -19,17 +19,14 @@ namespace Rental.Models.Customer
         public bool IsSubscribedToNewsLetter { get; set; }
 
         //IMembershipType ICustomer.MembershipTypes { get ; set; }
+        // . . dot 
 
-        [NotMapped]
-        public IMembershipType MembershipType { get; set; }
 
-        public MembershipType MembershipTypez
-        {
-            get;
-            set;
-        }
+        public MembershipType MembershipType { get; set; }
+
         
         //Used To add a foreign key from MemberShipType Table ... 
-        public byte MembershipTypezId { get; set; }
+        public byte MembershipTypeId { get; set; }
+        
     }
 }

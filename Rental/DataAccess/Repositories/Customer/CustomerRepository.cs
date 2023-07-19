@@ -11,9 +11,9 @@ namespace Rental.Data.Repositories
     public class CustomerRepository : ICustomerRepository
     {
         private ApplicationDbContext _dbContext;
-        public CustomerRepository(ApplicationDbContext _dbContext)
+        public CustomerRepository(ApplicationDbContext dbContext)
         {
-            this._dbContext = _dbContext;
+            _dbContext = dbContext;
         }
         void ICustomerRepository.AddCustomer(Customer customer)
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Rental.Models.DataBase;
 
 namespace Rental.Models.Customer
 {
@@ -15,6 +16,6 @@ namespace Rental.Models.Customer
 
         bool IsSubscribedToNewsLetter { get; set; }
 
-        IMembershipType MembershipType { get; set; }
+        MembershipType MembershipType { get; set; }
     }
 }

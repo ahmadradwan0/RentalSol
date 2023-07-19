@@ -17,20 +17,28 @@ namespace Rental.Controllers
 {
     public class CustomersController : Controller
     {
+        //. . . . . 
         private ApplicationDbContext _DbContext;
+
         private ICustomerRepository _CustomerRepository;
         private IMembershipTypesRepository _MembershipTypesRepository;
         private ICustomerValidationService _customerValidationService;
+
         private CustomerMembershipTypeViewModel _CustomerViewModel;
 
 
-        public CustomersController()
+
+        public CustomersController(ApplicationDbContext dbcontext, 
+            ICustomerRepository customerRepository,
+            IMembershipTypesRepository membershipTypeRepository,
+            ICustomerValidationService customerValidationService
+            )
         {
-            _DbContext = new ApplicationDbContext();
-            _CustomerRepository = new CustomerRepository(_DbContext);
-            _MembershipTypesRepository = new MembershipTypesRepository(_DbContext);
+            _DbContext = dbcontext;
+            _CustomerRepository = customerRepository;
+            _MembershipTypesRepository = membershipTypeRepository;
+            _customerValidationService = customerValidationService;
             _CustomerViewModel = new CustomerMembershipTypeViewModel();
-            _customerValidationService = new CustomerValidationService(_DbContext);
         }
 
         protected override void Dispose(bool disposing)
@@ -60,7 +68,8 @@ namespace Rental.Controllers
                 Id = c.Id,
                 Name = c.Name,
                 Email = c.Email,
-                IsSubscribedToNewsletter = c.IsSubscribedToNewsLetter
+                IsSubscribedToNewsletter = c.IsSubscribedToNewsLetter,
+                MembershipName = _MembershipTypesRepository.GetMemberShipNameToSpecificCustomerById(c)
             }).ToList();    
 
             _CustomerViewModel.MembershipTypes = types.Select(t => new MembershipTypeViewModel
@@ -90,7 +99,7 @@ namespace Rental.Controllers
 
 
 
-            return View(_CustomerViewModel);
+            return View();
         }
 
         public ActionResult Details(int id)
