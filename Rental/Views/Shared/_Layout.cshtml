@@ -8,10 +8,10 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-@*Partial view For Nav ...    *@
+    @*Partial view For Nav ...    *@
     @Html.Partial("~/Views/Shared/NavbarComponents/_navbar.cshtml")
 
-<div class="container body-content">
+    <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
@@ -21,6 +21,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/site")
     @RenderSection("scripts", required: false)
 </body>
 </html>

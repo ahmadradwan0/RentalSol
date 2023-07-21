@@ -4,7 +4,7 @@ namespace Rental.Validations.CustomersValidations
 {
     public interface ICustomerValidationService
     {
-        bool IsCustomerValid(CustomerViewModel customer);
+        bool IsCustomerValid(testCustomerViewModel customer);
 
         bool IsCustomerAuthorized(int customerId, string authUserId);
     }

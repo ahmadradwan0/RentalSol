@@ -11,6 +11,8 @@ using Rental.Models.Customer;
 using Rental.Models.DataBase;
 using Rental.Models.Movie;
 using Rental.Models.ViewModels;
+using Rental.Models.ViewModels.Customer;
+using Rental.Services.CustomerServices;
 using Rental.Validations.CustomersValidations;
 
 namespace Rental.Controllers
@@ -20,25 +22,30 @@ namespace Rental.Controllers
         //. . . . . 
         private ApplicationDbContext _DbContext;
 
+        private ICustomerService _customerService; 
         private ICustomerRepository _CustomerRepository;
         private IMembershipTypesRepository _MembershipTypesRepository;
         private ICustomerValidationService _customerValidationService;
 
         private CustomerMembershipTypeViewModel _CustomerViewModel;
+        //private NewCustomerViewModel _NewCustomerViewModel;
 
 
 
         public CustomersController(ApplicationDbContext dbcontext, 
             ICustomerRepository customerRepository,
             IMembershipTypesRepository membershipTypeRepository,
-            ICustomerValidationService customerValidationService
+            ICustomerValidationService customerValidationService,
+            ICustomerService customerService
             )
         {
             _DbContext = dbcontext;
             _CustomerRepository = customerRepository;
             _MembershipTypesRepository = membershipTypeRepository;
             _customerValidationService = customerValidationService;
+            _customerService = customerService;
             _CustomerViewModel = new CustomerMembershipTypeViewModel();
+            
         }
 
         protected override void Dispose(bool disposing)
@@ -55,51 +62,66 @@ namespace Rental.Controllers
         public ActionResult AllCustomers()
         {
             ///  /// /// ... 
-            List<Customer> customers = _CustomerRepository.GetAllCustomers();
+            //List<Customer> customers = _CustomerRepository.GetAllCustomers();
 
-            List<MembershipType> types = _MembershipTypesRepository.GetAllMembershipTypes();
-
-
+            //List<MembershipType> types = _MembershipTypesRepository.GetAllMembershipTypes();
 
 
+
+            
             // Feeding The ViewModel 
-            _CustomerViewModel.Customers = customers.Select(c => new CustomerViewModel
-            {
-                Id = c.Id,
-                Name = c.Name,
-                Email = c.Email,
-                IsSubscribedToNewsletter = c.IsSubscribedToNewsLetter,
-                MembershipName = _MembershipTypesRepository.GetMemberShipNameToSpecificCustomerById(c)
-            }).ToList();    
+            //_CustomerViewModel.Customers = customers.Select(c => new CustomerViewModel
+            //{
+            //    Id = c.Id,
+            //    Name = c.Name,
+            //    Email = c.Email,
+            //    IsSubscribedToNewsletter = c.IsSubscribedToNewsLetter,
+            //    MembershipName = _MembershipTypesRepository.GetMemberShipNameToSpecificCustomerById(c)
+            //}).ToList();    
 
-            _CustomerViewModel.MembershipTypes = types.Select(t => new MembershipTypeViewModel
-            {
-                Id = t.Id,
-                SubscribtionName = t.SubscribtionName,
-                Price = t.Price
-            }).ToList();
+            //_CustomerViewModel.MembershipTypes = types.Select(t => new MembershipTypeViewModel
+            //{
+            //    Id = t.Id,
+            //    SubscribtionName = t.SubscribtionName,
+            //    Price = t.Price
+            //}).ToList();
 
+
+            //Better Solution ....
+            _CustomerViewModel.Customers = _customerService.GetCustomerViewModelList();
+            
 
             return View(_CustomerViewModel);
         }
 
-        [HttpPost]
-        public ActionResult Save(Customer customer)
+        [HttpGet]
+        public ActionResult RegisterCustomerForm()
         {
-            if (customer.Id == 0)
+
+
+            //By creating a new instance of NewCustomerViewModel inside the RegisterCustomerForm action, you ensure that each request to the form gets its own unique instance of the view model ... 
+            var _NewCustomerViewModel = new NewCustomerViewModel
             {
-                _DbContext.Customers.Add(customer);
-            }
-            else
+                MembershipTypes = _MembershipTypesRepository.GetAllMembershipTypes()
+            };
+            return View(_NewCustomerViewModel);
+        }
+
+        [HttpPost]
+        public ActionResult RegisterCustomer(NewCustomerViewModel _newCustomerView)
+        {
+            if (!ModelState.IsValid)
             {
-                var customerInDataBase = _DbContext.Customers.Single(c => c.Id == customer.Id);
-
-                TryUpdateModel(customerInDataBase);
+                var viewmodel = _newCustomerView;
+                //viewmodel.Customer = _newCustomerView.Customer;
+                viewmodel.MembershipTypes = _MembershipTypesRepository.GetAllMembershipTypes();
+                
+                return View("RegisterCustomerForm", viewmodel);
             }
 
 
 
-            return View();
+            return RedirectToAction("AllCustomers");
         }
 
         public ActionResult Details(int id)

@@ -22,6 +22,9 @@ namespace Rental
             bundles.Add(new Bundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/site").Include(
+                "~/Scripts/Site.js"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap-luman.css",
                       "~/Content/Site.css"));

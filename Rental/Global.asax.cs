@@ -15,11 +15,13 @@ namespace Rental
     {
         protected void Application_Start()
         {
+            //for autofac ... 
+            //------------------------------------------------------------------------
             var builder = new ContainerBuilder();
             DependencyConfig.ConfigureDependencies(builder);
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
-
+            //-----------------------------------------------------------------------
 
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

@@ -27,6 +27,14 @@ namespace Rental
                 new {year = @"\d{4}", month = @"\d{2}"}
             );
 
+            /*
+            routes.MapRoute(
+                name : "test",
+                url: "Customers/RegisterCustomer",
+                defaults:new {controller = "Customers", action = "RegisterCustomer" }
+            );
+            */
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

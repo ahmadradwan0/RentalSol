@@ -17,7 +17,7 @@ namespace Rental.Validations.CustomersValidations
             _dbContext = dbContext;
         }
 
-        public bool IsCustomerValid(CustomerViewModel customer)
+        public bool IsCustomerValid(testCustomerViewModel customer)
         {
             // Implement your validation logic here
             // Check if the customer data satisfies your validation rules

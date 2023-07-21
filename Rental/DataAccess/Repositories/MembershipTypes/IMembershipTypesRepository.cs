@@ -13,7 +13,7 @@ namespace Rental.DataAccess.Repositories.MembershipTypes
     {
         List<MembershipType> GetAllMembershipTypes();
 
-        string GetMemberShipNameToSpecificCustomerById(Customer customer);
+        string GetMemberShipNameToSpecificCustomerById(int customerId);
 
     }
 }

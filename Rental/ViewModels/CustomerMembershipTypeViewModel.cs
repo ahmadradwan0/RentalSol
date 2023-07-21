@@ -9,7 +9,7 @@ namespace Rental.Models.ViewModels
 {
     public class CustomerMembershipTypeViewModel 
     {
-        public List<CustomerViewModel> Customers { get; set; }
+        public List<testCustomerViewModel> Customers { get; set; }
 
 
         public List<MembershipTypeViewModel> MembershipTypes { get; set; }

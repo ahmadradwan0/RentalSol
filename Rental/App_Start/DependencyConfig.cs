@@ -9,6 +9,7 @@ using Rental.Data.Repositories;
 using Rental.DataAccess.Repositories.MembershipTypes;
 using Rental.Models;
 using Rental.Models.ViewModels;
+using Rental.Services.CustomerServices;
 using Rental.Validations.CustomersValidations;
 
 namespace Rental.App_Start
@@ -22,7 +23,7 @@ namespace Rental.App_Start
             builder.RegisterType<CustomerRepository>().As<ICustomerRepository>();
             builder.RegisterType<MembershipTypesRepository>().As<IMembershipTypesRepository>();
             builder.RegisterType<CustomerValidationService>().As<ICustomerValidationService>();
-
+            builder.RegisterType<CustomerService>().As<ICustomerService>();
 
             // Register the controller types
             builder.RegisterControllers(Assembly.GetExecutingAssembly());

@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace Rental.Models.ViewModels
 {
-    public class CustomerViewModel
+    public class testCustomerViewModel
     {
         public int Id { get; set; }
 
