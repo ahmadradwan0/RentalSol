@@ -16,6 +16,8 @@ namespace Rental.Models.Customer
 
         bool IsSubscribedToNewsLetter { get; set; }
 
+        string Password { get; set; }
+
         MembershipType MembershipType { get; set; }
     }
 }

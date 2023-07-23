@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Rental.Models.Customer;
 using Rental.Models.DataBase;
+using Rental.Services.Validations.CustomDataAnnotationValidations;
 
 namespace Rental.Models.ViewModels.Customer
 {
@@ -13,16 +14,21 @@ namespace Rental.Models.ViewModels.Customer
         [Display(Name = "Full Name")]
         public string Name {get;set;}
 
-        [Required]
+        [Required(ErrorMessage = "* Required Field")]
         [EmailAddress]
         [Display(Name = "Email Address")]
         public string Email {get;set;}
 
-        [Required]
+        
         [Display(Name = "Active Plan")]
         public bool IsSubscribedToNewsLetter {get;set;}
 
-        [Required(ErrorMessage = "Membership Type is required")]
+        [PasswordValidation]
+        public string Password { get; set; }
         public MembershipType MembershipType {get;set;}
+
+        [Required(ErrorMessage = "* Required Field")]
+        [Display(Name = "Membership Type")]
+        public byte SelectedMembershipTypeId { get; set; }
     }
 }

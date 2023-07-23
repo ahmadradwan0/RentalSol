@@ -21,6 +21,7 @@ namespace Rental.Models.Customer
         //IMembershipType ICustomer.MembershipTypes { get ; set; }
         // . . dot 
 
+        public string Password { get; set; }
 
         public MembershipType MembershipType { get; set; }
 

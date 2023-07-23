@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -13,6 +14,7 @@ using Rental.Models.Movie;
 using Rental.Models.ViewModels;
 using Rental.Models.ViewModels.Customer;
 using Rental.Services.CustomerServices;
+using Rental.Services.Validations.PasswordsValidations;
 using Rental.Validations.CustomersValidations;
 
 namespace Rental.Controllers
@@ -26,6 +28,7 @@ namespace Rental.Controllers
         private ICustomerRepository _CustomerRepository;
         private IMembershipTypesRepository _MembershipTypesRepository;
         private ICustomerValidationService _customerValidationService;
+        private IPasswordHelper _passwordHelper;
 
         private CustomerMembershipTypeViewModel _CustomerViewModel;
         //private NewCustomerViewModel _NewCustomerViewModel;
@@ -36,7 +39,8 @@ namespace Rental.Controllers
             ICustomerRepository customerRepository,
             IMembershipTypesRepository membershipTypeRepository,
             ICustomerValidationService customerValidationService,
-            ICustomerService customerService
+            ICustomerService customerService,
+            IPasswordHelper passwordHelper
             )
         {
             _DbContext = dbcontext;
@@ -44,6 +48,7 @@ namespace Rental.Controllers
             _MembershipTypesRepository = membershipTypeRepository;
             _customerValidationService = customerValidationService;
             _customerService = customerService;
+            _passwordHelper = passwordHelper;
             _CustomerViewModel = new CustomerMembershipTypeViewModel();
             
         }
@@ -119,7 +124,18 @@ namespace Rental.Controllers
                 return View("RegisterCustomerForm", viewmodel);
             }
 
+            var customer = _newCustomerView.Customer;
+            var selectedMembership = _newCustomerView.Customer.SelectedMembershipTypeId;
+           
+            _CustomerRepository.AddCustomer(new Customer
+            {
+                Email = customer.Email,
+                Name = customer.Name,
+                Password = customer.Password,
+                MembershipTypeId = customer.SelectedMembershipTypeId,
 
+                
+        });
 
             return RedirectToAction("AllCustomers");
         }

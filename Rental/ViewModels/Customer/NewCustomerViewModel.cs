@@ -13,7 +13,7 @@ namespace Rental.Models.ViewModels.Customer
         
         public CustomerViewModel Customer { get; set; }
 
-        [Required]
+        
         public IEnumerable<MembershipType> MembershipTypes { get; set; }
     }
 }

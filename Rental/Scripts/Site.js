@@ -1,4 +1,4 @@
-
+/*
     // Wait for the DOM to be ready
     $(document).ready(function () {
         // Get the input element for the Name field
@@ -14,3 +14,4 @@
         });
     });
 
+    */

@@ -203,13 +203,21 @@
     <Compile Include="Migrations\202307161831453_deleteFromCustomer.designer.cs">
       <DependentUpon>202307161831453_deleteFromCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307220123533_addingPasswordField.cs" />
+    <Compile Include="Migrations\202307220123533_addingPasswordField.designer.cs">
+      <DependentUpon>202307220123533_addingPasswordField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307230807532_editNotNullprops.cs" />
+    <Compile Include="Migrations\202307230807532_editNotNullprops.designer.cs">
+      <DependentUpon>202307230807532_editNotNullprops.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
     <Compile Include="Models\Book\IBook.cs" />
     <Compile Include="Models\Customer\Customer.cs" />
     <Compile Include="Models\Customer\ICustomer.cs" />
-    <Compile Include="Models\DataBase\IMembershipType.cs" />
-    <Compile Include="Models\DataBase\MembershipType.cs" />
+    <Compile Include="Models\Memberships\IMembershipType.cs" />
+    <Compile Include="Models\Memberships\MembershipType.cs" />
     <Compile Include="Models\IItem.cs" />
     <Compile Include="Models\Movie\IMovie.cs" />
     <Compile Include="Models\IRentable.cs" />
@@ -221,6 +229,10 @@
     <Compile Include="Models\Movie\SellableMovie.cs" />
     <Compile Include="Services\CustomerServices\CustomerService.cs" />
     <Compile Include="Services\CustomerServices\ICustomerService.cs" />
+    <Compile Include="Services\Encryptions\Encryptor.cs" />
+    <Compile Include="Services\Validations\CustomDataAnnotationValidations\PasswordValidation.cs" />
+    <Compile Include="Services\Validations\PasswordsValidations\IPasswordHelper.cs" />
+    <Compile Include="Services\Validations\PasswordsValidations\Passwordhelper.cs" />
     <Compile Include="ViewModels\CustomerMembershipTypeViewModel.cs" />
     <Compile Include="ViewModels\Customer\testCustomerViewModel.cs" />
     <Compile Include="ViewModels\Customer\CustomerViewModel.cs" />
@@ -347,6 +359,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307161831453_deleteFromCustomer.resx">
       <DependentUpon>202307161831453_deleteFromCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307220123533_addingPasswordField.resx">
+      <DependentUpon>202307220123533_addingPasswordField.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307230807532_editNotNullprops.resx">
+      <DependentUpon>202307230807532_editNotNullprops.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

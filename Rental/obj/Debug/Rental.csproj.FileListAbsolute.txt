@@ -109,3 +109,5 @@ C:\Users\ahmad\source\repos\RentalSol\Rental\bin\System.Memory.xml
 C:\Users\ahmad\source\repos\RentalSol\Rental\bin\System.Numerics.Vectors.xml
 C:\Users\ahmad\source\repos\RentalSol\Rental\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ahmad\source\repos\RentalSol\Rental\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.addingPasswordField.resources
+C:\Users\ahmad\source\repos\RentalSol\Rental\obj\Debug\Rental.Migrations.editNotNullprops.resources
