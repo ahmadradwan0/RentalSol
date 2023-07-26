@@ -49,7 +49,7 @@
             @Html.ValidationMessageFor(m => m.Customer.SelectedMembershipTypeId)
         </span>
     </div>
-
+    @Html.AntiForgeryToken()
     <button type="submit" class="btn btn-primary">Register</button>
 
   

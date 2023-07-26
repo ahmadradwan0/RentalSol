@@ -63,34 +63,9 @@ namespace Rental.Controllers
         }
 
         // GET: Customers  
-
+        //Fix this and to customer view models 
         public ActionResult AllCustomers()
         {
-            ///  /// /// ... 
-            //List<Customer> customers = _CustomerRepository.GetAllCustomers();
-
-            //List<MembershipType> types = _MembershipTypesRepository.GetAllMembershipTypes();
-
-
-
-            
-            // Feeding The ViewModel 
-            //_CustomerViewModel.Customers = customers.Select(c => new CustomerViewModel
-            //{
-            //    Id = c.Id,
-            //    Name = c.Name,
-            //    Email = c.Email,
-            //    IsSubscribedToNewsletter = c.IsSubscribedToNewsLetter,
-            //    MembershipName = _MembershipTypesRepository.GetMemberShipNameToSpecificCustomerById(c)
-            //}).ToList();    
-
-            //_CustomerViewModel.MembershipTypes = types.Select(t => new MembershipTypeViewModel
-            //{
-            //    Id = t.Id,
-            //    SubscribtionName = t.SubscribtionName,
-            //    Price = t.Price
-            //}).ToList();
-
 
             //Better Solution ....
             _CustomerViewModel.Customers = _customerService.GetCustomerViewModelList();
@@ -112,7 +87,10 @@ namespace Rental.Controllers
             return View(_NewCustomerViewModel);
         }
 
+
+        //[ValidateAntiForgeryToken] is to validate the token in the form inside the view ...
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult RegisterCustomer(NewCustomerViewModel _newCustomerView)
         {
             if (!ModelState.IsValid)
@@ -131,6 +109,7 @@ namespace Rental.Controllers
             {
                 Email = customer.Email,
                 Name = customer.Name,
+                IsSubscribedToNewsLetter = customer.IsSubscribedToNewsLetter,
                 Password = customer.Password,
                 MembershipTypeId = customer.SelectedMembershipTypeId,
 
